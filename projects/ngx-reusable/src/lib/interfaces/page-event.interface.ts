@@ -1,0 +1,1 @@
+export { PageEvent } from '@angular/material/paginator';

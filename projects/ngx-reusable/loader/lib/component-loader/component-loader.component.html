@@ -1,0 +1,22 @@
+<!-- TODO: add nested classes instead of bootstrap classes -->
+<div class="row">
+    <div class="col py-5" [ngSwitch]="state">
+      <div class="text-center" *ngSwitchCase="'loading'">
+        <div
+          class="spinner-border spinner-border-lg"
+          style="width: 5rem; height: 5rem"
+          role="status"
+        ></div>
+      </div>
+      <div *ngSwitchCase="'error'">
+        <div class="text-center">Failed to fetch data</div>
+      </div>
+      <div *ngSwitchCase="'empty'">
+        <div class="text-center">No Data Found</div>
+      </div>
+    </div>
+</div>
+<div [hidden]="state !== 'ready'">
+  <ng-content></ng-content>
+</div>
+  
