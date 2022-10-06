@@ -1,11 +1,10 @@
 import { Directive, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[copyToClipboard]',
-  standalone: true
+  selector: '[copyToClipboard]'
 })
 export class CopyToClipboardDirective {
-  @Input() text!: string | number | boolean;
+  @Input('copyToClipboard') text!: string | number | boolean;
 
   constructor() { }
 

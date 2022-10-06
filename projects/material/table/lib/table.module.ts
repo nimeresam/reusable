@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 
-import { ArrayPipesModule } from 'ngx-reusable/pipes';
+import { ArrayPipesModule } from '@ngx-reusable/common/pipes';
 
 import { MaterialTableComponent } from './table/table.component';
 import { TransformPipe } from './pipes/transform.pipe';

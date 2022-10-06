@@ -15,4 +15,4 @@ import { SplitPipe } from './split.pipe';
     SplitPipe
   ]
 })
-export class StringPipesModule { }
+export class ReusableStringPipesModule { }

@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/ngx-reusable",
       "sourceRoot": "projects/ngx-reusable",
-      "prefix": "re",
+      "prefix": "reuse",
       "schematics": {
         "@schematics/angular:component": {
           "skipTests": true,
@@ -50,7 +50,19 @@
       "projectType": "library",
       "root": "projects/material",
       "sourceRoot": "projects/material/src",
-      "prefix": "lib",
+      "prefix": "reuse",
+      "schematics": {
+        "@schematics/angular:component": {
+          "skipTests": true,
+          "style": "scss"
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -80,8 +92,20 @@
     "common": {
       "projectType": "library",
       "root": "projects/common",
-      "sourceRoot": "projects/common/src",
-      "prefix": "lib",
+      "sourceRoot": "projects/common",
+      "prefix": "reuse",
+      "schematics": {
+        "@schematics/angular:component": {
+          "skipTests": true,
+          "style": "scss"
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

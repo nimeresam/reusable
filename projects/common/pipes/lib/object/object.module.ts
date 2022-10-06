@@ -21,4 +21,4 @@ import { EntriesPipe } from './entries.pipe';
     EntriesPipe
   ]
 })
-export class ObjectPipesModule { }
+export class ReusableObjectPipesModule { }

@@ -1,8 +1,7 @@
 import { Directive, EventEmitter, HostListener, Input, Output } from '@angular/core';
 
 @Directive({
-  selector: '[confirm]',
-  standalone: true
+  selector: '[confirm]'
 })
 export class ConfirmDirective {
 

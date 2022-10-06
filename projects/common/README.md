@@ -1,24 +1,129 @@
-# Common
+# @ngx-reusable
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+**@ngx-reusable** project is an **Angular** library that contains a collection of components, directives and pipes that we need in any new project
 
-## Code scaffolding
+# @ngx-reusable/common
 
-Run `ng generate component component-name --project common` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project common`.
-> Note: Don't forget to add `--project common` or else it will be added to the default project in your `angular.json` file. 
+**@ngx-reusable/common** library contains multiple resuable directives and pipes.
 
-## Build
+## versions
 
-Run `ng build common` to build the project. The build artifacts will be stored in the `dist/` directory.
+| Angular Version | @ngx-reusable/common    |
+| --------------- | ----------------------- |
+| 14              | @ngx-reusable/common@14 |
 
-## Publishing
+## Directives
 
-After building your library with `ng build common`, go to the dist folder `cd dist/common` and run `npm publish`.
+add `ReusableDirectivesModule` to your module:
 
-## Running unit tests
+    import { ReusableDirectivesModule } from "@ngx-reusable/common/directives";
 
-Run `ng test common` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Confirm:**
 
-## Further help
+  - selector: `[confirm]`
+  - usage: launch confirm prompt on element click:
+  - `@Input() message?: string;`
+  - `@Output() confirmed: EventEmitter<void>;`
+  - `@Output() cancelled: EventEmitter<void>;`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **MiddleClick:**
+
+  - selector: `[mdlclick]`
+  - usage: emit an event on mouse middle button click:
+  - `@Output('mdlclick') event: EventEmitter<MouseEvent>;`
+
+- **RightClick:**
+
+  - selector: `[rtclick]`
+  - usage: emit an event on mouse right button click:
+  - `@Output('rtclick') event: EventEmitter<MouseEvent>;`
+
+- **CopyToClipboard:**
+
+  - selector: `[copyToClipboard]`
+  - usage: copy text to clipboard on element click:
+  - `@Input('copyToClipboard') text!: string;`
+
+- **PasteFromClipboard:**
+  - selector: `[pasteFromClipboard]`
+  - usage: paste text from clipboard to `formControl` and emit event with text on element click:
+  - `@Output('pasteFromClipboard') paste: EventEmitter<string>;`
+
+## Pipes
+
+### Array Pipes
+
+Add ability to use native JavaScript array methods in HTML.
+
+add `ReusableArrayPipesModule` to your module:
+
+    import { ReusableArrayPipesModule } from "@ngx-reusable/common/pipes";
+
+- **FilterPipe:**
+
+  - `{{ array | filter: property: operator: expected }}`
+  - **property**: for objects array to select property
+    - pass `""` if array isn't array of objects
+    - pass property name if proeprty is one level
+    - if nested property pass it like: `level1.level1`
+  - **operator**: `==`, `!=`, `<>`, `<`, `<=`, `>`, `>=`, `===`
+  - **expected**: required value
+
+  **Example:**
+  `{{ arr | filter: 'count': '>=': 10 }}`
+  will be translated to:
+  `arr.filter(item => item['count'] >= 10)`
+
+- **JoinPipe:**
+
+  - `{{ array | join [: seperator] }}`
+  - **seperator**: join method seperator
+
+  **Example:**
+  `{{ arr | join: ',' }}`
+  will be translated to:
+  `arr.join(',')`
+
+### Object Pipes
+
+Add ability to use native JavaScript object methods in HTML.
+add `ReusableObjectPipesModule` to your module:
+
+    import { ReusableObjectPipesModule } from "@ngx-reusable/common/pipes";
+
+- **EntriesPipe:**
+
+  - `{{ object | entries }}`
+
+  **Example:**
+  `*ngFor="let [key, value] for (object | entries)"`
+
+- **KeysPipe:**
+
+  - `{{ object | keys }}`
+
+  **Example:**
+  `*ngFor="let key for (object | keys)"`
+
+- **ValuesPipe:**
+
+  - `{{ object | values }}`
+
+  **Example:**
+  `*ngFor="let value for (object | values)"`
+
+### String Pipes
+
+Add ability to use native JavaScript string methods in HTML.
+add `ReusableStringPipesModule` to your module:
+
+    import { ReusableStringPipesModule } from "@ngx-reusable/common/pipes";
+
+- **SplitPipe:**
+
+  - `{{ str | split [: splitter [:limit]] }}`
+  - **splitter:** split string by (default = "").
+  - **limit:** limit number of generated items.
+
+  **Example:**
+  `*ngFor="let item for (strLikeArray | split: ',')"`

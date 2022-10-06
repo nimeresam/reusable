@@ -1,14 +1,11 @@
-import { Directive, EventEmitter, HostListener, Input, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Directive({
-  selector: '[pasteFromClipboard]',
-  standalone: true
+  selector: '[pasteFromClipboard]'
 })
 export class PasteFromClipboardDirective {
 
-  @Input() control?: FormControl;
-  @Output() paste: EventEmitter<string>;
+  @Output('pasteFromClipboard') paste: EventEmitter<string>;
 
   constructor() { 
     this.paste = new EventEmitter();
@@ -19,7 +16,6 @@ export class PasteFromClipboardDirective {
     navigator.clipboard.readText()
     .then(
       text => {
-        this.control?.setValue(text);
         this.paste.emit(text);
       }
     ).catch(err => {

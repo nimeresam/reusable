@@ -18,4 +18,4 @@ import { JoinPipe } from './join.pipe';
     JoinPipe
   ]
 })
-export class ArrayPipesModule { }
+export class ReusableArrayPipesModule { }
