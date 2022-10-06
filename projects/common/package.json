@@ -1,6 +1,6 @@
 {
   "name": "@ngx-reusable/common",
-  "version": "14.1.1",
+  "version": "14.1.2",
   "keywords": ["angular", "reusable", "pipes", "directives", "shared", "utility", "common"],
   "peerDependencies": {
     "@angular/common": "^14.1.0",

@@ -26,11 +26,17 @@ add `ReusableDirectivesModule` to your module:
   - `@Output() confirmed: EventEmitter<void>;`
   - `@Output() cancelled: EventEmitter<void>;`
 
+  **Example:**
+  `<button confirm message="Are you sure?" (confirmed)="doSomething()">`
+
 - **MiddleClick:**
 
   - selector: `[mdlclick]`
   - usage: emit an event on mouse middle button click:
   - `@Output('mdlclick') event: EventEmitter<MouseEvent>;`
+
+  **Example:**
+  `<button (mdlclick)="doSomething()">`
 
 - **RightClick:**
 
@@ -38,16 +44,26 @@ add `ReusableDirectivesModule` to your module:
   - usage: emit an event on mouse right button click:
   - `@Output('rtclick') event: EventEmitter<MouseEvent>;`
 
+  **Example:**
+  `<button (rtclick)="doSomething()">`
+
 - **CopyToClipboard:**
 
   - selector: `[copyToClipboard]`
   - usage: copy text to clipboard on element click:
   - `@Input('copyToClipboard') text!: string;`
 
+  **Example:**
+  `<button [copyToClipboard]="someTextToCopy">`
+
 - **PasteFromClipboard:**
+
   - selector: `[pasteFromClipboard]`
   - usage: paste text from clipboard to `formControl` and emit event with text on element click:
   - `@Output('pasteFromClipboard') paste: EventEmitter<string>;`
+
+  **Example:**
+  `<button (pasteFromClipboard)="getSomeText($event)">`
 
 ## Pipes
 
