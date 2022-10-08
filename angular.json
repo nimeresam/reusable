@@ -3,49 +3,6 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-reusable": {
-      "projectType": "library",
-      "root": "projects/ngx-reusable",
-      "sourceRoot": "projects/ngx-reusable",
-      "prefix": "reuse",
-      "schematics": {
-        "@schematics/angular:component": {
-          "skipTests": true,
-          "style": "scss"
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        }
-      },
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/ngx-reusable/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/ngx-reusable/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/ngx-reusable/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ngx-reusable/src/test.ts",
-            "tsConfig": "projects/ngx-reusable/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-reusable/karma.conf.js"
-          }
-        }
-      }
-    },
     "material": {
       "projectType": "library",
       "root": "projects/material",
@@ -131,7 +88,37 @@
           }
         }
       }
+    },
+    "custom": {
+      "projectType": "library",
+      "root": "projects/custom",
+      "sourceRoot": "projects/custom/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/custom/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/custom/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/custom/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/custom/src/test.ts",
+            "tsConfig": "projects/custom/tsconfig.spec.json",
+            "karmaConfig": "projects/custom/karma.conf.js"
+          }
+        }
+      }
     }
-  },
-  "defaultProject": "ngx-reusable"
+  }
 }

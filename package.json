@@ -2,6 +2,9 @@
   "name": "utility",
   "version": "0.0.0",
   "scripts": {
+    "build:custom": "ng build --project custom",
+    "publish:custom": "cd dist/custom && npm publish --access public",
+    "build:publish:custom": "npm run build:custom && npm run publish:custom",
     "build:common": "ng build --project common",
     "publish:common": "cd dist/common && npm publish --access public",
     "build:publish:common": "npm run build:common && npm run publish:common",
@@ -22,6 +25,7 @@
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
     "@ngx-reusable/common": "^14.1.1",
+    "lib": "^4.3.3",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
