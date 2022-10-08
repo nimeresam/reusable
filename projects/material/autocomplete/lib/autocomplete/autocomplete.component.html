@@ -20,9 +20,10 @@
     </div>
     <div matSuffix class="d-flex">
         <ng-content select="[matSuffix]"></ng-content>
-        <mat-icon matSuffix (click)="clear()" class="cursor-pointer" *ngIf="searchControl.value">
+        <!-- TODO: find a solution to clear -->
+        <!-- <mat-icon matSuffix (click)="clear()" class="cursor-pointer" *ngIf="searchControl.value">
             clear
-        </mat-icon>
+        </mat-icon> -->
     </div>
     <mat-hint>
         <ng-content select="mat-hint"></ng-content>

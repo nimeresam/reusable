@@ -37,7 +37,7 @@ export class AutocompleteComponent extends BaseAutocompleteComponent implements 
     this.options$ = this.searchControl.valueChanges.pipe(
       startWith(this.searchControl.value),
       map((value: string) => this._filter(value))
-    )
+    );
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -63,7 +63,7 @@ export class AutocompleteComponent extends BaseAutocompleteComponent implements 
   override writeValue(obj: any): void {
     super.writeValue(obj);
     if (obj === null || obj === undefined || obj === "") {
-      this.searchControl.setValue(null, { emitEvent: false });
+      this.searchControl.setValue('', { emitEvent: false });
     }
   }
 

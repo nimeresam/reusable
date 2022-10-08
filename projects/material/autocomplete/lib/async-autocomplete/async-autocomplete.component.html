@@ -20,12 +20,14 @@
     </div>
     <div matSuffix class="d-flex">
         <ng-content select="[matSuffix]"></ng-content>
+        <!-- TODO: find a solution for loading spinner -->
         <div *ngIf="showLoading" class="spinner-border spinner-border-sm mx-auto my-1" role="status">
             <span class="sr-only"></span>
         </div>
-        <mat-icon matSuffix (click)="clear()" class="cursor-pointer" *ngIf="searchControl.value">
+        <!-- TODO: find a solution to clear -->
+        <!-- <mat-icon matSuffix (click)="clear()" class="cursor-pointer" *ngIf="searchControl.value">
             clear
-        </mat-icon>
+        </mat-icon> -->
     </div>
     <mat-hint>
         <span *ngIf="hasError">{{ hasError }}</span>

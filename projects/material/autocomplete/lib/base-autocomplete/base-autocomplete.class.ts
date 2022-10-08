@@ -17,7 +17,7 @@ export class BaseAutocompleteComponent implements OnInit, ControlValueAccessor, 
     @Input('value') valueProperty?: string;
 
     options$!: Observable<AutocompleteOption[]>;
-    searchControl: FormControl;
+    searchControl: FormControl<string>;
     value: any;
     defaultValue: any;
 
@@ -98,8 +98,8 @@ export class BaseAutocompleteComponent implements OnInit, ControlValueAccessor, 
     }
 
     public clear(): void {
-        this.searchControl.setValue(null);
-        this.onChange(null);
+        this.searchControl.setValue('');
+        this.onChange('');
         this.value = this.defaultValue;
         setTimeout(() => {
             // TODO: handle this issue

@@ -44,7 +44,7 @@ export class AsyncAutocompleteComponent extends BaseAutocompleteComponent implem
   override async ngOnInit(): Promise<void> {
     await super.ngOnInit();
     this._valueChangesSubscription = this.searchControl.valueChanges.pipe(
-      filter(val => val !== undefined),
+      filter((val, _) => val !== undefined),
       tap(_ => {
         this.showLoading = true;
         this.hasError = false;
@@ -70,7 +70,7 @@ export class AsyncAutocompleteComponent extends BaseAutocompleteComponent implem
     super.writeValue(obj);
     setTimeout(async () => {
       if (obj === null || obj === undefined || obj === "") {
-        this.searchControl.setValue(null, { emitEvent: false });
+        this.searchControl.setValue('', { emitEvent: false });
       } else {
         let value = await lastValueFrom(this.findByValueFn(obj))
         let option = new AutocompleteOption(value, this.keyProperty, this.valueProperty);

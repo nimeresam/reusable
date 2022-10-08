@@ -1,6 +1,6 @@
 # @ngx-reusable
 
-**@ngx-reusable** project is an **Angular** library that contains a collection of components, directives and pipes that we need in any new project
+**@ngx-reusable** project is an **Angular** library that contains a collection of components, directives and pipes that we need in any project
 
 # @ngx-reusable/common
 

@@ -22,7 +22,12 @@ import { RightClickDirective } from './right-click.directive';
   exports: [
     CopyToClipboardDirective,
     PasteFromClipboardDirective,
-    ConfirmDirective
+    ConfirmDirective,
+    CopyToClipboardDirective,
+    PasteFromClipboardDirective,
+    ConfirmDirective,
+    MiddleClickDirective,
+    RightClickDirective
   ]
 })
 export class ReusableDirectivesModule { }

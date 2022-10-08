@@ -28,4 +28,4 @@ import { MatIconModule } from '@angular/material/icon';
     AsyncAutocompleteComponent
   ]
 })
-export class AutocompleteModule { }
+export class ReusableAutocompleteModule { }

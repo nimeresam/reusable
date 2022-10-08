@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 
-import { ArrayPipesModule } from '@ngx-reusable/common/pipes';
+import { ReusableArrayPipesModule } from '@ngx-reusable/common/pipes';
 
 import { MaterialTableComponent } from './table/table.component';
 import { TransformPipe } from './pipes/transform.pipe';
@@ -17,7 +17,7 @@ import { MatSortModule } from '@angular/material/sort';
   ],
   imports: [
     CommonModule,
-    ArrayPipesModule,
+    ReusableArrayPipesModule,
     MatTableModule,
     MatSortModule
   ],
@@ -25,4 +25,4 @@ import { MatSortModule } from '@angular/material/sort';
     MaterialTableComponent
   ]
 })
-export class TableModule { }
+export class ReusableTableModule { }

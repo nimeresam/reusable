@@ -1,9 +1,11 @@
 {
   "name": "@ngx-reusable/material",
-  "version": "14.0.0beta1",
+  "version": "14.0.5",
+  "keywords": ["angular", "reusable", "material", "@angular/material", "shared", "utility", "common", "table", "autocomplete", "async autocomplete"],
   "peerDependencies": {
     "@angular/common": "^14.1.0",
     "@angular/core": "^14.1.0",
+    "@angular/material": "^14.1.0",
     "@ngx-reusable/common": "^14.0.0"
   },
   "dependencies": {
