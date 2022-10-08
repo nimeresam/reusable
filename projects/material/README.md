@@ -28,7 +28,7 @@ add `ReusableTableModule` to your module:
 
 - **TableComponent:**
 
-- selector: `reuse-table`
+- selector: `reuse-mat-table`
 - `@Input() list!: { [key: string ]: any }[];`
 - `@Input() columns!: TableColumn[];`
 - `@Input() pageEvent?: PageEvent;`
@@ -45,9 +45,9 @@ add `ReusableAutocompleteModule` to your module:
 
     import { ReusableAutocompleteModule } from "@ngx-reusable/material/autocomplete";
 
-- **autocomplete**
+- **AutocompleteComponent**
 
-  - selector: `reuse-autocomplete`
+  - selector: `reuse-mat-autocomplete`
   - usage: searchable dropdown
   - `@Input() options!: any[];`
   - `@Input() appearance?: 'standard' | 'fill' | 'outline';`

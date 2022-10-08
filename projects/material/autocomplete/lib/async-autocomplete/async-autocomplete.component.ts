@@ -6,7 +6,7 @@ import { BaseAutocompleteComponent } from '../base-autocomplete/base-autocomplet
 import { AutocompleteOption } from '../models/autocomplete-option.class';
 
 @Component({
-  selector: 'reuse-async-autocomplete',
+  selector: 'reuse-mat-autocomplete-async',
   templateUrl: './async-autocomplete.component.html',
   styleUrls: ['./async-autocomplete.component.scss'],
   providers: [

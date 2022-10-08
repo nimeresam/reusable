@@ -4,7 +4,7 @@ import { Sort } from '@angular/material/sort';
 import { TableColumn } from '../models/column.interface';
 
 @Component({
-  selector: 'reuse-table',
+  selector: 'reuse-mat-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })

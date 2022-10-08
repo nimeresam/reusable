@@ -5,7 +5,7 @@ import { BaseAutocompleteComponent } from '../base-autocomplete/base-autocomplet
 import { AutocompleteOption } from '../models/autocomplete-option.class';
 
 @Component({
-  selector: 'reuse-autocomplete',
+  selector: 'reuse-mat-autocomplete',
   templateUrl: './autocomplete.component.html',
   styleUrls: ['./autocomplete.component.scss'],
   providers: [
