@@ -3,7 +3,7 @@ name: Deploy Packages
 on: push # must be on merge
 
 jobs:
-  build:
+  install:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -12,9 +12,30 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - name: Publish Common Package
-        run: npm run build:publish:common
-      - name: Publish Material Package
-        run: npm run build:publish:material
-      - name: Publish Custom Package
-        run: npm run build:publish:custom
+  publish_common:
+    needs: install
+    steps:
+      - name: build
+        run: npm run build:custom
+      - name: publish
+        run: npm run publish:custom
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  publish_material:
+    needs: install
+    steps:
+      - name: build
+        run: npm run build:material
+      - name: publish
+        run: npm run publish:material
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  publish_custom:
+    needs: install
+    steps:
+      - name: build
+        run: npm run build:custom
+      - name: publish
+        run: npm run publish:custom
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
