@@ -13,14 +13,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - name: Build Common
-        use: npm run build:common
+        run: npm run build:common
       - name: Publish Common
-        use: npm run publish:publish
+        run: npm run publish:publish
       - name: Build Material
-        use: npm run build:material
+        run: npm run build:material
       - name: Publish Material
-        use: npm run publish:material
+        run: npm run publish:material
       - name: Build Custom
-        use: npm run build:custom
+        run: npm run build:custom
       - name: Publish Custom
-        use: npm run publish:custom
+        run: npm run publish:custom
