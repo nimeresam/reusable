@@ -16,11 +16,17 @@ jobs:
         run: npm run build:common
       - name: Publish Common
         run: npm run publish:publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Build Material
         run: npm run build:material
       - name: Publish Material
         run: npm run publish:material
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Build Custom
         run: npm run build:custom
       - name: Publish Custom
         run: npm run publish:custom
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
