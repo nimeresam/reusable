@@ -15,7 +15,7 @@ jobs:
       - name: Build Common
         run: npm run build:common
       - name: Publish Common
-        run: npm run publish:publish
+        run: npm run publish:common
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Build Material
