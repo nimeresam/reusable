@@ -1,0 +1,20 @@
+name: Deploy Packages
+
+on: push # must be on merge
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - name: Publish Common Package
+        run: npm run build:publish:common
+      - name: Publish Material Package
+        run: npm run build:publish:material
+      - name: Publish Custom Package
+        run: npm run build:publish:custom
