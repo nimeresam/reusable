@@ -6,7 +6,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/workflows/workflow-2.yml
+      - uses: ./.github/workflows/install.yml
       - name: Build Common
         run: npm run build:common
       - name: Publish Common
