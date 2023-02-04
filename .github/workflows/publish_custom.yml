@@ -1,0 +1,21 @@
+name: Deploy Packages
+
+on: push # must be on merge
+
+jobs:
+  publish_packages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: "https://registry.npmjs.org"
+      - run: npm ci
+      - name: Build Custom
+        run: npm run build:custom
+      - name: Publish Custom
+        run: npm run publish:custom
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
