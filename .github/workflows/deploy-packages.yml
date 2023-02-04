@@ -12,13 +12,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-  # publish_common:
-  #   needs: install
-  #   steps:
-  #     - name: build
-  #       run: npm run build:custom
+  publish_common:
+    needs: install
+    steps:
+      - name: build
+        run: npm run build:common
   #     - name: publish
-  #       run: npm run publish:custom
+  #       run: npm run publish:common
   #       env:
   #         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   # publish_material:
