@@ -12,30 +12,30 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-  publish_common:
-    needs: install
-    steps:
-      - name: build
-        run: npm run build:custom
-      - name: publish
-        run: npm run publish:custom
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  publish_material:
-    needs: install
-    steps:
-      - name: build
-        run: npm run build:material
-      - name: publish
-        run: npm run publish:material
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  publish_custom:
-    needs: install
-    steps:
-      - name: build
-        run: npm run build:custom
-      - name: publish
-        run: npm run publish:custom
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  # publish_common:
+  #   needs: install
+  #   steps:
+  #     - name: build
+  #       run: npm run build:custom
+  #     - name: publish
+  #       run: npm run publish:custom
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  # publish_material:
+  #   needs: install
+  #   steps:
+  #     - name: build
+  #       run: npm run build:material
+  #     - name: publish
+  #       run: npm run publish:material
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  # publish_custom:
+  #   needs: install
+  #   steps:
+  #     - name: build
+  #       run: npm run build:custom
+  #     - name: publish
+  #       run: npm run publish:custom
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
