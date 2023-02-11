@@ -7,9 +7,8 @@ import { IBase } from "../interfaces/base-entity.interface";
 import { RESTfulService } from "./restful-service.class";
 import { IGetParams } from "../interfaces/get-params.interface";
 import { IGetResponse } from "../interfaces/get-response.interface";
-import { PageEvent } from "@angular/material/paginator";
-import { Sort } from "@angular/material/sort";
-import { SortDirection } from "../interfaces/sort-event.interface";
+import { PageEvent } from "../interfaces/page-event.interface";
+import { Sort, SortDirection } from "../interfaces/sort-event.interface";
 
 @Component({
     template: ""
